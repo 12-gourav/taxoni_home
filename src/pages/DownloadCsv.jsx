@@ -11,8 +11,8 @@ const DownloadCsv = () => {
   const location = useLocation();
 
   const id = location?.search?.split("?id=")[1];
-  const start = location?.search?.split("?start=")[1];
-  const end = location?.search?.split("?start=")[1];
+  const start = location?.search?.split("&start=")[1];
+  const end = location?.search?.split("&end=")[1];
 
 const downloadExcel = async () => {
   try {
