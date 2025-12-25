@@ -12,7 +12,6 @@ const Download = () => {
 
 
   const id = location?.search?.split("?id=")[1]
-  console.log(id);
 
   const fetchInvoice = async () => {
     try {
@@ -36,7 +35,6 @@ const Download = () => {
     }
   };
 
-  console.log(state);
 
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
