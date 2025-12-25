@@ -10,9 +10,11 @@ const DownloadCsv = () => {
   const [loading, setLoading] = useState(false);
   const location = useLocation();
 
-  const id = location?.search?.split("?id=")[1];
-  const start = location?.search?.split("&start=")[1];
-  const end = location?.search?.split("&end=")[1];
+const params = new URLSearchParams(window.location.search);
+
+const id = params.get("id");
+const start = params.get("start");
+const end = params.get("end");
 
 const downloadExcel = async () => {
   try {
@@ -49,6 +51,7 @@ const downloadExcel = async () => {
     window.URL.revokeObjectURL(url);
   } catch (error) {
     console.error("Excel download failed", error);
+    toast
   } finally {
     setLoading(false);
   }
